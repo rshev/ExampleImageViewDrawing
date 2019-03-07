@@ -9,11 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var imageView: UIImageView! {
-        didSet {
-            imageView.contentMode = .scaleAspectFit
-        }
-    }
+    @IBOutlet var scrollView: UIScrollView!
+
+    private var imageView: UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +21,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction func didDoubleTap(_ sender: Any) {
-        guard let image = imageView.image else {
+        guard
+            let imageView = imageView,
+            let image = imageView.image
+        else {
             return
         }
         let renderer = UIGraphicsImageRenderer(size: image.size, format: image.imageRendererFormat)
@@ -44,7 +45,17 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         guard let image = info[.originalImage] as? UIImage else {
             return
         }
-        imageView.image = image
+
+        let imageView = UIImageView(image: image)
+        self.imageView = imageView
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(imageView)
+        NSLayoutConstraint.activate([
+            imageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            imageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            imageView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+        ])
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

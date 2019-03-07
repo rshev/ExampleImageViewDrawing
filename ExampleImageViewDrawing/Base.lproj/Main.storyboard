@@ -18,25 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s49-K6-4EC">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUq-Zf-PvL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="iDT-Ph-7d3" appends="YES" id="mZh-k3-4HF"/>
+                                    <outletCollection property="gestureRecognizers" destination="iDT-Ph-7d3" appends="YES" id="7Wg-zS-e38"/>
                                 </connections>
-                            </imageView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="s49-K6-4EC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2BZ-E0-fOL"/>
-                            <constraint firstAttribute="bottom" secondItem="s49-K6-4EC" secondAttribute="bottom" id="83A-Ku-EZb"/>
-                            <constraint firstItem="s49-K6-4EC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Vkx-vb-2HC"/>
-                            <constraint firstAttribute="trailing" secondItem="s49-K6-4EC" secondAttribute="trailing" id="zGi-hp-HJC"/>
+                            <constraint firstAttribute="trailing" secondItem="pUq-Zf-PvL" secondAttribute="trailing" id="TS6-aS-yhB"/>
+                            <constraint firstAttribute="bottom" secondItem="pUq-Zf-PvL" secondAttribute="bottom" id="iRc-Wt-Djb"/>
+                            <constraint firstItem="pUq-Zf-PvL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="r2o-dx-KBA"/>
+                            <constraint firstItem="pUq-Zf-PvL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zVh-2I-VBn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="s49-K6-4EC" id="8ic-l9-i4G"/>
+                        <outlet property="scrollView" destination="pUq-Zf-PvL" id="r1F-42-Ljg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
